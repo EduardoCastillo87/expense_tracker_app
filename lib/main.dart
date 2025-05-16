@@ -1,24 +1,28 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
+  runApp(
+    MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.deepPurple,
-        body: Center(
-          child: Text(
-            'Zoe y Allegra',
-            style: TextStyle(fontSize: 28, color: Colors.white),
+        body: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Color.fromARGB(255, 52, 93, 243),
+                Color.fromARGB(255, 33, 166, 243),
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+          ),
+          child: const Center(
+            child: Text(
+              'Zoe y Allegra',
+              style: TextStyle(fontSize: 30, color: Colors.white),
+            ),
           ),
         ),
       ),
-    );
-  }
+    ),
+  );
 }
