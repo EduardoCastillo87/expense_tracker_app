@@ -7,13 +7,23 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:expense_tracker_app/gradient_container.dart';
 
 import 'package:expense_tracker_app/main.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: Scaffold(
+          body: GradientContainer([
+            Color.fromARGB(255, 52, 93, 243),
+            Color.fromARGB(255, 33, 166, 243),
+          ]),
+        ),
+      ),
+    );
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);
